@@ -3,7 +3,8 @@ async function buscarClima() {
   if (!cep) return alert("Digite um CEP válido!");
 
   try {
-    const response = await fetch(`/clima?cep=${cep}`);
+    const response = await fetch(`https://web-production-893a.up.railway.app/clima?cep=${cep}`);
+
     if (!response.ok) throw new Error("Erro ao buscar dados do clima");
 
     const data = await response.json();
